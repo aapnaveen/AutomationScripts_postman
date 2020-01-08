@@ -18,32 +18,24 @@ http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/jso
         <set-variable variableName="inputString" value="#[json:fruit]" doc:name="Variable"/>
         <choice doc:name="Choice">
             <when expression="#[flowVars.inputString == 'Apple']">
-                <dw:transform-message doc:name="Transform Message">
-                    <dw:set-payload><![CDATA[%dw 1.0
-%output application/json
----
-{
+                <set-payload value="{
 	Response:
 	{
-		Staus:"Success",
-		Message:"Message successfully Updated"
+		Staus:&quot;Success&quot;,
+		Message:&quot;Message successfully Updated&quot;
 	}
-}]]></dw:set-payload>
-                </dw:transform-message>
+}" mimeType="application/json" doc:name="Set Payload"/>
+
             </when>
             <otherwise>
-                <dw:transform-message doc:name="Transform Message">
-                    <dw:set-payload><![CDATA[%dw 1.0
-%output application/json
----
-{
+                <set-payload value="{
 	Response:
 	{
-		Staus:"Failure",
-		Message:"Message failed to Updated "
+		Staus:&quot;Failure&quot;,
+		Message:&quot;Message failed to Updated &quot;
 	}
-}]]></dw:set-payload>
-                </dw:transform-message>
+}" mimeType="application/json" doc:name="Set Payload"/>
+
             </otherwise>
         </choice>
     </flow>
