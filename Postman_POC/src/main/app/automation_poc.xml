@@ -19,20 +19,18 @@ http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/jso
         <choice doc:name="Choice">
             <when expression="#[flowVars.inputString == 'Apple']">
                 <set-payload value="{
-	Response:
-	{
-		Staus:&quot;Success&quot;,
-		Message:&quot;Message successfully Updated&quot;
+	&quot;Response&quot;: {
+		&quot;Staus&quot;: &quot;Success&quot;,
+		&quot;Message&quot;: &quot;Message successfully Updated in Payroll System&quot;
 	}
 }" mimeType="application/json" doc:name="Set Payload"/>
 
             </when>
             <otherwise>
                 <set-payload value="{
-	Response:
-	{
-		Staus:&quot;Failure&quot;,
-		Message:&quot;Message failed to Updated &quot;
+	&quot;Response&quot;: {
+		&quot;Staus&quot;: &quot;Failure&quot;,
+		&quot;Message&quot;: &quot;Message Failed to updated in Payroll System&quot;
 	}
 }" mimeType="application/json" doc:name="Set Payload"/>
 
