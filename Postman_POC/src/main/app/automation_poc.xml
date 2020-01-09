@@ -12,7 +12,7 @@ http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/jso
     <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="${http.port}" doc:name="HTTP Listener Configuration"/>
     <http:request-config name="HTTP_Request_Configuration" host="localhost" port="8086" doc:name="HTTP Request Configuration"/>
     <flow name="postman_test_pocFlow">
-        <http:listener config-ref="HTTP_Listener_Configuration" path="/test" doc:name="HTTP" allowedMethods="GET"/>
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/test" doc:name="HTTP" />
         <byte-array-to-string-transformer doc:name="Byte Array to String"/>
         <logger message="#[json:fruit]" level="INFO" doc:name="Logger"/>
         <set-variable variableName="inputString" value="#[json:fruit]" doc:name="Variable"/>
