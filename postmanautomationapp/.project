@@ -15,7 +15,6 @@
   </buildSpec>
   <natures>
     <nature>org.mule.tooling.maven.mavenNature</nature>
-	<nature>org.mule.tooling.core.muleDomainNature</nature>
     <nature>org.eclipse.jdt.core.javanature</nature>
     <nature>org.mule.tooling.core.muleNature</nature>
   </natures>
